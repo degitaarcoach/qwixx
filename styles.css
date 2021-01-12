@@ -1,0 +1,505 @@
+body,
+html {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  margin: 20px;
+}
+
+.game-card {
+  background-color: #e0e0e0;
+  padding: 25px 0 0 25px;
+  width: 1025px;
+}
+
+.color-rows {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  width: calc(12 * 82px);
+}
+
+.color-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border: solid white 1px;
+}
+
+.row-red {
+  background-color: #b6555d;
+  color: #b6555d;
+}
+.row-yellow {
+  background-color: #fbd96b;
+  color: #fbd96b;
+}
+.row-green {
+  background-color: #4d9a66;
+  color: #4d9a66;
+}
+.row-blue {
+  background-color: #577197;
+  color: #577197;
+}
+
+.color-row div {
+  padding: 8px 0px;
+  position: relative;
+  border: solid 1px gray;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 80px;
+}
+
+.red-2::before,
+.yellow-2::before,
+.green-12::before,
+.blue-12::before {
+  display: block;
+  content: '►';
+  position: absolute;
+  left: -50px;
+  color: #212121;
+  text-shadow: 1px 2px #e0e0e0, 1px -2px #e0e0e0, 5px 0 #e0e0e0;
+  cursor: initial;
+}
+
+.color-row div:last-child {
+  border-radius: 40px;
+  font-size: 1.7rem;
+  height: 40px;
+  width: 40px;
+  margin-left: 8px;
+  align-self: center;
+  padding: 4px;
+  line-height: 1.4;
+  transform: rotate(15deg) scaleX(-1);
+}
+
+.color-row div:last-child::before {
+  display: block;
+  content: '';
+  width: 3px;
+  border: solid 3px black;
+  opacity: 0.3;
+  transform: rotate(15deg);
+  position: absolute;
+  right: -8px;
+  top: 30px;
+}
+
+.color-row {
+  padding: 0 10px 0 19px;
+}
+
+.color-row div:hover,
+.minus-square:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.color-row div,
+.minus-square {
+  cursor: pointer;
+  position: relative;
+}
+
+.score-row {
+  display: grid;
+  grid-template-columns: repeat(17, 1fr);
+}
+
+.score-rows,
+.total-score-row {
+  width: 1000px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.multiplier,
+.score {
+  background-color: white;
+  width: 85%;
+}
+
+.multiplier,
+.score,
+.total-color,
+.total-minus,
+.total-score {
+  color: #333;
+  font-size: 1.3rem;
+  margin-left: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.multiplier {
+  padding-top: 5px;
+}
+
+.score-description-1,
+.minus-description {
+  padding-top: 10px;
+}
+
+.score-description-1,
+.score-description-2,
+.minus-description,
+.total-score-description {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.total-score-description {
+  padding: 10px 0 0 25px;
+}
+
+.multiplier {
+  border-radius: 10px 10px 0 0;
+  border: solid #a3a3a3 3px;
+  border-bottom: none;
+}
+
+.score {
+  border-radius: 0 0 10px 10px;
+  border: solid #a3a3a3 3px;
+  border-top: none;
+  padding-bottom: 2px;
+}
+
+.score::before,
+.score-description-2::before {
+  display: block;
+  content: '';
+  border-top: solid #a3a3a3 2px;
+}
+
+.score::before {
+  margin: 7px auto;
+  width: 80%;
+}
+.score-description-2::before {
+  margin: 7px 0;
+  width: 95%;
+}
+
+.minus-description {
+  grid-column-start: -5;
+  grid-column-end: -2;
+}
+
+.minus-square {
+  width: 32px;
+  height: 32px;
+  border: solid 2px #a3a3a3;
+  background-color: white;
+  border-radius: 5px;
+  align-self: end;
+}
+
+.minus-description,
+.minus-square {
+  margin-left: 20px;
+}
+
+.total-score-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 30px;
+  background-color: #c7c7c7;
+  margin: 20px 0 0 -25px;
+  padding: 10px 25px 10px 0;
+  width: 1025px;
+}
+
+.total-color,
+.total-minus {
+  width: 75px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.total-score {
+  width: 150px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.total-color-red {
+  border: 3px solid #b6555d;
+  margin-left: 40px;
+}
+.total-color-yellow {
+  border: 3px solid #fbd96b;
+}
+.total-color-green {
+  border: 3px solid #4d9a66;
+}
+.total-color-blue {
+  border: 3px solid #577197;
+}
+.total-minus {
+  border: 3px solid #a3a3a3;
+}
+.total-score {
+  border: 3px solid #545454;
+}
+
+.minus-sign {
+  margin: 0 25px;
+}
+.equal-sign {
+  margin: 0 25px;
+}
+
+.plus-sign,
+.minus-sign,
+.equal-sign {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #939393;
+}
+
+
+.cross::after,
+.disabled::after,
+.minus-cross::after,
+.key-cross::after {
+  font-family: 'Hachi Maru Pop', cursive;
+  display: block;
+  position: absolute;
+  font-weight: 100;
+  color: #333;
+  opacity: 0.95;
+  z-index: 1;
+  top: -10px;
+  left: -4px;
+  padding: 0px 4px 18px 4px;
+  cursor: initial;
+  border: solid 3px rgba(255, 255, 255, 0);
+  border-radius: 8px;
+  text-align: center;
+  width: 76px;
+  height: 100%;
+  text-align: center;
+  font-size: 5rem;
+  line-height: .8;
+}
+.cross::after,
+.minus-cross::after,
+.key-cross::after {
+  content: 'X';
+}
+
+.key-cross::after {
+  transform: rotate(15deg);
+  font-size: 3rem;
+  width: 40px;
+  line-height: 1.05;
+}
+
+.minus-cross::after {
+  font-size: 2.5rem;
+  padding: 0px 0px 0px 0px;
+  width: 35px;
+  line-height: 0.55;
+  top: -3px;
+  left: -4px;
+  padding: 0;
+}
+.disabled::after {
+  content: '−';
+  line-height: 0.72;
+}
+
+.game-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.action-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.dice-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  vertical-align: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.first-face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dice {
+  width: 104px;
+  height: 104px;
+  border-radius: 10%;
+  margin-right: 10px;
+  transition: all 0.2s;
+  margin: 0 12px 20px 0;
+  padding: 6px;
+}
+
+.dice:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.dot {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.die-white-one,
+.die-white-two {
+  background-color: #dadada;
+}
+.die-white-one .dot,
+.die-white-two .dot {
+  background-color: black;
+}
+.die-red {
+  background-color: #b6555d;
+}
+.die-yellow {
+  background-color: #fbd96b;
+}
+.die-green {
+  background-color: #4d9a66;
+}
+.die-blue {
+  background-color: #577197;
+}
+
+.second-face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.second-face .dot:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+.third-face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.third-face .dot:nth-of-type(1) {
+  align-self: flex-end;
+}
+
+.third-face .dot:nth-of-type(2) {
+  align-self: center;
+}
+
+.fourth-face,
+.sixth-face,
+.fifth-face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fourth-face .column,
+.sixth-face .column,
+.fifth-face .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fifth-face .column:nth-of-type(2) {
+  justify-content: center;
+}
+
+.btn-roll,
+.btn-action,
+.btn-newgame {
+  text-transform: uppercase;
+  height: 50px;
+  width: 100px;
+  margin-right: 20px;
+  background-color: #eeeeee;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  outline: none;
+  border: solid 2px #ebebeb;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px 1px #ababab;
+  transition: all 0.2s;
+}
+
+.btn-newgame {
+  height: 100px;
+  width: 200px;
+  font-size: 1.5rem;
+}
+
+.btn-roll {
+  margin-bottom: 16px;
+}
+
+.btn-roll:hover,
+.btn-action:hover,
+.btn-newgame:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.btn-roll:active,
+.btn-action:active, 
+.btn-newgame:active {
+  transform: scale(0.98);
+}
+
+.player {
+  display: flex;
+  width: 143px;
+  flex-direction: column;
+  font-size: 1rem;
+  border: solid 2px #ebebeb;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px 1px #ababab;
+  padding: 6px;
+  margin-right: 16px;
+  background-color: #eeeeee;
+}
+.player div {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 16px 0;
+  text-transform: uppercase;
+}
+
+.input-container {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.input-container div label {
+  text-transform: uppercase;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <title>Qwixx game</title>
+</head>
+<body>
+  <div class="input-container">
+    <div class="input-player-1-div">
+      <label for="player-1">speler 1</label>
+      <input type="text" name="player-1" class="player-1" id="player-1" value="speler 1">
+    </div>
+    <div class="input-player-2-div">
+      <label for="player-2">speler 2</label>
+      <input type="text" name="player-2" class="player-2" id="player-2" value="speler 2">
+    </div>
+  </div>
+  <div class="game-card">
+    <div class="color-rows">
+      <div class="color-row row-red">
+        <div class="red-2 number-square">2</div>
+        <div class="red-3 number-square">3</div>
+        <div class="red-4 number-square">4</div>
+        <div class="red-5 number-square">5</div>
+        <div class="red-6 number-square">6</div>
+        <div class="red-7 number-square">7</div>
+        <div class="red-8 number-square">8</div>
+        <div class="red-9 number-square">9</div>
+        <div class="red-10 number-square">10</div>
+        <div class="red-11 number-square">11</div>
+        <div class="red-12 number-square">12</div>
+        <div class="red-key key"><i class="fas fa-unlock"></i></div>
+      </div>
+
+      <div class="color-row row-yellow">
+        <div class="yellow-2 number-square">2</div>
+        <div class="yellow-3 number-square">3</div>
+        <div class="yellow-4 number-square">4</div>
+        <div class="yellow-5 number-square">5</div>
+        <div class="yellow-6 number-square">6</div>
+        <div class="yellow-7 number-square">7</div>
+        <div class="yellow-8 number-square">8</div>
+        <div class="yellow-9 number-square">9</div>
+        <div class="yellow-10 number-square">10</div>
+        <div class="yellow-11 number-square">11</div>
+        <div class="yellow-12 number-square">12</div>
+        <div class="yellow-key key"><i class="fas fa-unlock"></i></div>
+      </div>
+
+      <div class="color-row row-green">
+        <div class="green-12 number-square">12</div>
+        <div class="green-11 number-square">11</div>
+        <div class="green-10 number-square">10</div>
+        <div class="green-9 number-square">9</div>
+        <div class="green-8 number-square">8</div>
+        <div class="green-7 number-square">7</div>
+        <div class="green-6 number-square">6</div>
+        <div class="green-5 number-square">5</div>
+        <div class="green-4 number-square">4</div>
+        <div class="green-3 number-square">3</div>
+        <div class="green-2 number-square">2</div>
+        <div class="green-key key"><i class="fas fa-unlock"></i></div>
+      </div>
+
+      <div class="color-row row-blue">
+        <div class="blue-12 number-square">12</div>
+        <div class="blue-11 number-square">11</div>
+        <div class="blue-10 number-square">10</div>
+        <div class="blue-9 number-square">9</div>
+        <div class="blue-8 number-square">8</div>
+        <div class="blue-7 number-square">7</div>
+        <div class="blue-6 number-square">6</div>
+        <div class="blue-5 number-square">5</div>
+        <div class="blue-4 number-square">4</div>
+        <div class="blue-3 number-square">3</div>
+        <div class="blue-2 number-square">2</div>
+        <div class="blue-key key"><i class="fas fa-unlock"></i></div>
+      </div>
+    </div>
+
+    <div class="score-rows">
+      <div class="score-row score-row-1">
+        <div class="score-description-1">Kruisjes</div>
+        <div class="multiplier">1x</div>
+        <div class="multiplier">2x</div>
+        <div class="multiplier">3x</div>
+        <div class="multiplier">4x</div>
+        <div class="multiplier">5x</div>
+        <div class="multiplier">6x</div>
+        <div class="multiplier">7x</div>
+        <div class="multiplier">8x</div>
+        <div class="multiplier">9x</div>
+        <div class="multiplier">10x</div>
+        <div class="multiplier">11x</div>
+        <div class="multiplier">12x</div>
+        <div class="minus-description">Elke mislukte worp: -5</div>
+      </div>
+      <div class="score-row score-row-2">
+        <div class="score-description-2">Punten</div>
+        <div class="score">1</div>
+        <div class="score">3</div>
+        <div class="score">6</div>
+        <div class="score">10</div>
+        <div class="score">15</div>
+        <div class="score">21</div>
+        <div class="score">28</div>
+        <div class="score">36</div>
+        <div class="score">45</div>
+        <div class="score">55</div>
+        <div class="score">66</div>
+        <div class="score">78</div>
+        <div class="minus-square"></div>
+        <div class="minus-square"></div>
+        <div class="minus-square"></div>
+        <div class="minus-square"></div>
+      </div>
+    </div>
+
+    <div class="total-score-row">
+      <div class="total-score-description">Score</div>
+      <div class="total-color total-color-red"></div>
+      <div class="plus-sign">+</div>
+      <div class="total-color total-color-yellow"></div>
+      <div class="plus-sign">+</div>
+      <div class="total-color total-color-green"></div>
+      <div class="plus-sign">+</div>
+      <div class="total-color total-color-blue"></div>
+      <div class="minus-sign">−</div>
+      <div class="total-minus"></div>
+      <div class="equal-sign">=</div>
+      <div class="total-score"></div>
+    </div>
+
+  </div>
+  
+  <!--//////////// DICE ////////////-->
+  <div class="game-container">
+    <div class="action-container">
+      <button class="btn-roll">gooien</button>
+      <button class="btn-action hide"></button>
+      <button class="btn-newgame hide">nieuw spel</button>
+    </div>
+      <div class="dice-container"></div>
+  </div>
+
+
+
+  <script src="index.js"></script>
+</body>
+</html>
